@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>JKT48 Quota Checker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="logo-title">
+      <div class="brand">
+        <img src="icons/icon32.png" alt="JKT48" class="brand-icon">
+        <h1>JKT48 Quota Checker</h1>
+      </div>
+      <div class="header-actions">
+        <span id="login-status" class="badge badge-info">Checking...</span>
+        <button id="btn-help" class="icon-btn" title="Panduan Penggunaan">?</button>
+      </div>
+    </div>
+    <div class="event-input-group">
+      <input type="text" id="event-code" placeholder="Kode Event (contoh: EX24AE)" value="EX24AE">
+      <button id="btn-fetch" class="btn-primary">Cek Kuota</button>
+    </div>
+  </header>
+
+  <section class="controls">
+    <input type="text" id="search-member" placeholder="Cari nama member...">
+    <div class="filter-row">
+      <label class="checkbox-label">
+        <input type="checkbox" id="filter-available" checked>
+        Hanya yang tersedia
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" id="auto-refresh">
+        Auto-refresh
+      </label>
+      <select id="refresh-interval">
+        <option value="3">3s</option>
+        <option value="5" selected>5s</option>
+        <option value="10">10s</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div>Total Slot Tersedia: <strong id="stat-total-available">0</strong></div>
+    <div id="last-updated" class="text-muted">-</div>
+  </section>
+
+  <main id="quota-container">
+    <div class="placeholder-msg">Klik "Cek Kuota" untuk memuat data kuota.</div>
+  </main>
+
+  <footer>
+    <a href="https://github.com/Emzyjeppp" target="_blank" class="author-watermark">
+      by <strong>Jeppp</strong>
+    </a>
+  </footer>
+
+  <!-- Help Modal -->
+  <div id="help-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Cara Pakai</h2>
+        <button id="btn-close-help" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li>Login di <a href="https://jkt48.com" target="_blank">jkt48.com</a>.</li>
+          <li>Buka halaman event/tiket yang diinginkan.</li>
+          <li>Kode event otomatis terdeteksi dari link URL (contoh <code>EX5B99</code>).</li>
+          <li>Klik <strong>Cek Kuota</strong> untuk melihat daftar kuota.</li>
+          <li>Centang <strong>Auto-refresh</strong> untuk pantau berkala dengan alarm suara saat kuota restock.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
