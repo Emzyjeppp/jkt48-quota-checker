@@ -67,29 +67,28 @@ h1 {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
-.icon-btn {
+.help-btn {
   background: #1e293b;
-  color: #94a3b8;
+  color: #cbd5e1;
   border: 1px solid #334155;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  font-size: 12px;
-  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 4px;
   cursor: pointer;
   transition: all 0.15s;
 }
 
-.icon-btn:hover {
+.help-btn:hover {
   background: #334155;
-  color: #f8fafc;
-  border-color: #475569;
+  color: #ffffff;
+  border-color: #64748b;
 }
 
 .badge {
