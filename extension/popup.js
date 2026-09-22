@@ -192,6 +192,18 @@ function handleAutoRefresh() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Pastikan toolbar icon terpasang
+  if (chrome.action && chrome.action.setIcon) {
+    chrome.action.setIcon({
+      path: {
+        16: "icons/icon16.png",
+        32: "icons/icon32.png",
+        48: "icons/icon48.png",
+        128: "icons/icon128.png"
+      }
+    }).catch(() => {});
+  }
+
   detectActiveTabEventCode();
 
   document.getElementById("btn-fetch").addEventListener("click", () => {
